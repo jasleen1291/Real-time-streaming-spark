@@ -1,0 +1,290 @@
+{
+    "houses": [
+        {
+            "streetAddress": "718 Old San Francisco Rd",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94086",
+            "detailPage": "/realestateandhomes-detail/718-Old-San-Francisco-Rd_Sunnyvale_CA_94086_M19046-14525",
+            "latitude": "37.365757",
+            "longitude": "-122.018639",
+            "pricerange": "\n                        $2,605+ /mo",
+            "bed": "1 - 3 Bed",
+            "bath": "1 - 3 Bath",
+            "sqft": "808+ Sq Ft",
+            "propertytype": "For Rent",
+            "unstructuredInfo": [
+                "Renaissance Apartment Homes",
+                "Neighborhood:\r\n                            \r\n                            Ponderosa \r\n                        ",
+                "/mo",
+                "Managed by: Yamaoka Associates, Inc.",
+                "Tour",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "1063 Morse Rd",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94089",
+            "detailPage": "/realestateandhomes-detail/1063-Morse-Ave_Sunnyvale_CA_94089_M25531-50085",
+            "latitude": "37.400722",
+            "longitude": "-122.016302",
+            "pricerange": "\n                        $2,435+ /mo",
+            "bed": "1 - 2 Bed",
+            "bath": "1 - 2 Bath",
+            "sqft": "580+ Sq Ft",
+            "propertytype": "For Rent",
+            "unstructuredInfo": [
+                "Mission Pointe by Windsor",
+                "Neighborhood:\r\n                            \r\n                            Lakewood \r\n                        ",
+                "/mo",
+                "Managed by: Windsor Communities"
+            ]
+        },
+        {
+            "streetAddress": "1000 Escalon Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/1000-Escalon-Ave_Sunnyvale_CA_94085_M18901-92605",
+            "latitude": "37.388584",
+            "longitude": "-122.0448",
+            "pricerange": "\n                        $2,830+ /mo",
+            "bed": "1 - 2 Bed",
+            "bath": "1 - 2 Bath",
+            "sqft": "715+ Sq Ft",
+            "propertytype": "For Rent",
+            "unstructuredInfo": [
+                "The Meadows",
+                "Neighborhood:\r\n                            \r\n                            West Murphy \r\n                        ",
+                "/mo",
+                "Managed by: Yamaoka Associates, Inc."
+            ]
+        },
+        {
+            "streetAddress": "972 Corte Madera Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/972-Corte-Madera-Ave_Sunnyvale_CA_94085_M27992-39817",
+            "latitude": "37.390567",
+            "longitude": "-122.04356",
+            "pricerange": "\n                        $2,573+ /mo",
+            "bed": "1 - 2 Bed",
+            "bath": "1 - 2 Bath",
+            "sqft": "710+ Sq Ft",
+            "propertytype": "For Rent",
+            "unstructuredInfo": [
+                "Summerhill Park",
+                "Neighborhood:\r\n                            \r\n                            West Murphy \r\n                        ",
+                "/mo",
+                "Managed by: Essex Property Trust",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "1063 Morse Rd",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94089",
+            "detailPage": "/realestateandhomes-detail/1063-Morse-Ave_Sunnyvale_CA_94089_M25531-50085",
+            "latitude": "37.400722",
+            "longitude": "-122.016302",
+            "pricerange": "\r\n                                 $2,435+/mo",
+            "bed": "1 - 2 Bd",
+            "bath": "1 - 2 Ba",
+            "sqft": "580+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "Mission Pointe by Windsor",
+                "Neighborhood:\r\n                        \r\n                        Lakewood \r\n                        ",
+                "/mo",
+                "Managed by: Windsor Communities",
+                "Save Listing",
+                "Pet Policy Not Provided"
+            ]
+        },
+        {
+            "streetAddress": "972 Corte Madera Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/972-Corte-Madera-Ave_Sunnyvale_CA_94085_M27992-39817",
+            "latitude": "37.390567",
+            "longitude": "-122.04356",
+            "pricerange": "\r\n                                 $2,573+/mo",
+            "bed": "1 - 2 Bd",
+            "bath": "1 - 2 Ba",
+            "sqft": "710+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "Summerhill Park",
+                "Neighborhood:\r\n                        \r\n                        West Murphy \r\n                        ",
+                "/mo",
+                "Managed by: Essex Property Trust",
+                "Save Listing",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "1180 Lochinvar Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94087",
+            "detailPage": "/realestateandhomes-detail/1180-Lochinvar-Ave_Sunnyvale_CA_94087_M19412-46946",
+            "latitude": "37.338741",
+            "longitude": "-121.996681",
+            "pricerange": "\r\n                                 $2,446+/mo",
+            "bed": "1 - 2 Bd",
+            "bath": "1 Ba",
+            "sqft": "700+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "The Crossings Apartments",
+                "Neighborhood:\r\n                        \r\n                        Raynor \r\n                        ",
+                "/mo",
+                "Managed by: Greystar Real Estate Partners",
+                "Save Listing",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "1257 Lakeside Dr",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/1257-Lakeside-Dr_Sunnyvale_CA_94085_M18839-73230",
+            "latitude": "37.388266",
+            "longitude": "-121.99411",
+            "pricerange": "\r\n                                 $2,800+/mo",
+            "bed": "1 - 3 Bd",
+            "bath": "1 - 3 Ba",
+            "sqft": "563+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "Avalon Silicon Valley",
+                "Neighborhood:\r\n                        \r\n                        East Murphy \r\n                        ",
+                "/mo",
+                "Managed by: AvalonBay Communities Inc",
+                "Save Listing",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "355 N Wolfe Rd",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/355-N-Wolfe-Rd_Sunnyvale_CA_94085_M26739-61684",
+            "latitude": "37.3821",
+            "longitude": "-122.01375",
+            "pricerange": "\r\n                                 $2,654+/mo",
+            "bed": "1 - 3 Bd",
+            "bath": "1 - 2 Ba",
+            "sqft": "800+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "eaves Sunnyvale",
+                "Neighborhood:\r\n                        \r\n                        East Murphy \r\n                        ",
+                "/mo",
+                "Managed by: AvalonBay Communities Inc",
+                "Save Listing",
+                "Pets Allowed"
+            ]
+        },
+        {
+            "streetAddress": "315 Olson Way Apt 103",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94086",
+            "detailPage": "/realestateandhomes-detail/315-Olson-Way-Apt-103_Sunnyvale_CA_94086_M19266-10358",
+            "latitude": "37.377315",
+            "longitude": "-122.032075",
+            "pricerange": "\r\n                                 $3,760+/mo",
+            "bed": "1 - 2 Bd",
+            "bath": "1 - 2.5 Ba",
+            "sqft": "675+ Sq Ft",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "Loft House",
+                "Neighborhood:\r\n                        \r\n                        Heritage District \r\n                        ",
+                "/mo",
+                "Managed by: Carmel Partners",
+                "Save Listing",
+                "Pet Policy Not Provided"
+            ]
+        },
+        {
+            "streetAddress": "984 Alpine Ter Unit 1",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94086",
+            "detailPage": "/realestateandhomes-detail/984-Alpine-Ter-Unit-1_Sunnyvale_CA_94086_M16190-94859",
+            "latitude": "37.383314",
+            "longitude": "-122.042393",
+            "pricerange": "\r\n$3,500\r\n                          /mo\r\n                            ",
+            "bed": "2 Bd",
+            "bath": "2 Full, 1 Half Ba",
+            "propertytype": "House For Rent",
+            "unstructuredInfo": [
+                "Neighborhood:\r\n                        \r\n                        West Murphy \r\n                        ",
+                "/mo",
+                "Brokered by: Alain Pinel Realtors - Los Altos",
+                "Save Listing",
+                "Pet Policy Not Provided"
+            ]
+        },
+        {
+            "streetAddress": "E Maude Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94085",
+            "detailPage": "/realestateandhomes-detail/E-Maude-Ave_Sunnyvale_CA_94085_M24429-76519",
+            "latitude": "37.385374",
+            "longitude": "-122.019942",
+            "pricerange": "\r\n$5,775\r\n                          /mo\r\n                            ",
+            "bed": "3 Bd",
+            "bath": "1 Full, 1 Half Ba",
+            "propertytype": "House For Rent",
+            "unstructuredInfo": [
+                "/mo",
+                "Save Listing",
+                "Pet Policy Not Provided"
+            ]
+        },
+        {
+            "streetAddress": "1575 Tenaka Pl",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94087",
+            "detailPage": "/realestateandhomes-detail/1575-Tenaka-Pl_Sunnyvale_CA_94087_M22789-47769",
+            "latitude": "37.34195",
+            "longitude": "-122.035798",
+            "pricerange": "\r\n$3,595\r\n                          /mo\r\n                            ",
+            "bed": "2 Bd",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "Neighborhood:\r\n                        \r\n                        Sunnyvale West > Serra \r\n                        ",
+                "/mo",
+                "Save Listing",
+                "Pet Policy Not Provided"
+            ]
+        },
+        {
+            "streetAddress": "678 Bellflower Ave",
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "postalCode": "94086",
+            "detailPage": "/realestateandhomes-detail/678-Bellflower-Ave_Sunnyvale_CA_94086_M15744-36746",
+            "pricerange": "\r\n$2,730\r\n                          /mo\r\n                            ",
+            "bed": "2 Bd",
+            "propertytype": "Apartment For Rent",
+            "unstructuredInfo": [
+                "/mo",
+                "Save Listing",
+                "Pets Allowed"
+            ]
+        }
+    ]
+}

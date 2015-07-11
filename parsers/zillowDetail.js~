@@ -1,0 +1,11 @@
+module.exports = function(fs,request,cheerio,task)
+{
+console.log("hi");
+request(task.url, function(error, response, html){
+    if(!error){
+        var $ = cheerio.load(html);
+	console.log($("li.shallow span").text());
+
+}
+})
+}

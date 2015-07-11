@@ -1,0 +1,404 @@
+{
+    "houses": [
+        {
+            "statustype": "1",
+            "latitude": "33289043",
+            "id": "zpid_59262339",
+            "class": "property-listing zsg-media image-loaded",
+            "longitude": "-111832249",
+            "photo": "http://photos2.zillowstatic.com/p_g/ISt8mfjz88fesf0000000000.jpg",
+            "detailPage": "/homedetails/620-E-Banelli-Pl-Chandler-AZ-85286/59262339_zpid/",
+            "propInfo": {
+                "undefined": "620 E Banelli Pl, Chandler, AZ85286",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$190,000",
+                "property-data": "3 bds • 3 ba • 1,574 sqft • 3,424 sqft lot • Built 2004",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33305207",
+            "id": "zpid_8205116",
+            "class": "property-listing zsg-media image-loaded",
+            "longitude": "-111816591",
+            "photo": "http://dev.virtualearth.net/REST/v1/Imagery/Map/Aerial/33.305207,-111.816591/17?mapSize=150,112&key=AmdvKO2hNoyLePakiVzRBZiGPKCxV6MtwWneohoPfmXclTaRTzvT6_Ict5-PBHO6",
+            "detailPage": "/homedetails/105-N-Senate-Way-Chandler-AZ-85225/8205116_zpid/",
+            "propInfo": {
+                "undefined": "105 N Senate Way, Chandler, AZ85225",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$299,000",
+                "property-data": "3 bds • 2 ba • 2,049 sqft • 0.80 ac lot • Built 1974",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33269166",
+            "id": "zpid_95091613",
+            "class": "property-listing zsg-media image-loaded",
+            "longitude": "-111774225",
+            "photo": "http://photos2.zillowstatic.com/p_g/IStoalo3dsj7fh1000000000.jpg",
+            "detailPage": "/homedetails/728-E-Charlevoix-Ave-Gilbert-AZ-85297/95091613_zpid/",
+            "propInfo": {
+                "undefined": "728 E Charlevoix Ave, Gilbert, AZ85297",
+                "listing-type zsg-content_collapsed": "Coming Soon",
+                "price-large zsg-h2 zsg-content_collapsed": "$479,000",
+                "property-data": "5 bds • 3 ba • 2,945 sqft • 9,871 sqft lot • Built 2012",
+                "days-till-market zsg-fineprint": " On market May 10th"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33301916",
+            "id": "zpid_67086764",
+            "class": "property-listing zsg-media image-loaded",
+            "longitude": "-111801056",
+            "photo": "http://photos2.zillowstatic.com/p_g/ISdcakk6iueobu0000000000.jpg",
+            "detailPage": "/homedetails/114-S-130th-Pl-Chandler-AZ-85225/67086764_zpid/",
+            "propInfo": {
+                "undefined": "114 S 130th Pl, Chandler, AZ85225",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "zestimate": " Foreclosure Est.: $160K",
+                "property-data": "3 bds • 2 ba • 1,304 sqft • 7,257 sqft lot • Built 1981",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33205032",
+            "id": "zpid_62736890",
+            "class": "property-listing zsg-media",
+            "longitude": "-111766834",
+            "photo": "http://photos1.zillowstatic.com/p_g/IS91jwlwyqbdbu0000000000.jpg",
+            "detailPage": "/homedetails/4283-E-Gleneagle-Dr-Chandler-AZ-85249/62736890_zpid/",
+            "propInfo": {
+                "undefined": "4283 E Gleneagle Dr, Chandler, AZ85249",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$254,900",
+                "property-data": "3 bds • 2 ba • 2,230 sqft • 9,635 sqft lot • Built 2004",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33222518",
+            "id": "zpid_8214356",
+            "class": "property-listing zsg-media",
+            "longitude": "-111889238",
+            "photo": "http://photos3.zillowstatic.com/p_g/ISxvm25m23n3qq1000000000.jpg",
+            "detailPage": "/homedetails/24706-S-Desert-Dr-Sun-Lakes-AZ-85248/8214356_zpid/",
+            "propInfo": {
+                "undefined": "24706 S Desert Dr, Sun Lakes, AZ85248",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$405,000",
+                "property-data": "3 bds • 3 ba • 3,373 sqft • 8,973 sqft lot • Built 1998",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33258266",
+            "id": "zpid_8212348",
+            "class": "property-listing zsg-media",
+            "longitude": "-111852538",
+            "photo": "http://photos2.zillowstatic.com/p_g/ISpllkr2tzcj1a0000000000.jpg",
+            "detailPage": "/homedetails/735-W-Desert-Broom-Dr-Chandler-AZ-85248/8212348_zpid/",
+            "propInfo": {
+                "undefined": "735 W Desert Broom Dr, Chandler, AZ85248",
+                "listing-type zsg-content_collapsed": "For Sale by Owner",
+                "price-large zsg-h2 zsg-content_collapsed": "$490,000",
+                "property-data": "4 bds • 3.75 ba • 3,128 sqft • 8,403 sqft lot • Built 1999",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33302110",
+            "id": "zpid_8166374",
+            "class": "property-listing zsg-media",
+            "longitude": "-111919522",
+            "photo": "http://photos1.zillowstatic.com/p_g/ISxjp0s4t0q4oj0000000000.jpg",
+            "detailPage": "/homedetails/17-S-Galaxy-Dr-Chandler-AZ-85226/8166374_zpid/",
+            "propInfo": {
+                "undefined": "17 S Galaxy Dr, Chandler, AZ85226",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$329,000",
+                "property-data": "3 bds • 2 ba • 2,296 sqft • 0.30 ac lot • Built 1979",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33292250",
+            "id": "zpid_2102434851",
+            "class": "property-listing zsg-media",
+            "longitude": "-111929500",
+            "photo": "http://photos3.zillowstatic.com/p_g/IS99pqn9sgy7570000000000.jpg",
+            "detailPage": "/homedetails/5131-W-Kesler-Lane-Chandler-AZ-85226/2102434851_zpid/",
+            "propInfo": {
+                "undefined": "5131 W Kesler Lane, chandler, AZ85226",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$224,750",
+                "property-data": "3 bds • 2 ba • 1,604 sqft • 6,195 sqft lot • Built 1993",
+                "doz zsg-fineprint": "Less than 1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33258763",
+            "id": "zpid_8211709",
+            "class": "property-listing zsg-media",
+            "longitude": "-111861667",
+            "photo": "http://photos2.zillowstatic.com/p_g/IShzqf7gu5ci5h1000000000.jpg",
+            "detailPage": "/homedetails/1171-W-Honeysuckle-Ln-Chandler-AZ-85248/8211709_zpid/",
+            "propInfo": {
+                "undefined": "1171 W Honeysuckle Ln, Chandler, AZ85248",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$505,900",
+                "property-data": "3 bds • 3 ba • 2,634 sqft • 6,904 sqft lot • Built 1995",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33341506",
+            "id": "zpid_8192571",
+            "class": "property-listing zsg-media",
+            "longitude": "-111878620",
+            "photo": "http://photos2.zillowstatic.com/p_g/ISd4sodfd9ta5x0000000000.jpg",
+            "detailPage": "/homedetails/2208-W-Palomino-Dr-Chandler-AZ-85224/8192571_zpid/",
+            "propInfo": {
+                "undefined": "2208 W Palomino Dr, Chandler, AZ85224",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$289,900",
+                "property-data": "4 bds • 2 ba • 2,040 sqft • 9,879 sqft lot • Built 1982",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33253622",
+            "id": "zpid_8212752",
+            "class": "property-listing zsg-media",
+            "longitude": "-111845887",
+            "photo": "http://photos3.zillowstatic.com/p_g/IS-krhycfk8qzbx.jpg",
+            "detailPage": "/homedetails/3581-S-Nebraska-St-Chandler-AZ-85248/8212752_zpid/",
+            "propInfo": {
+                "undefined": "3581 S Nebraska St, Chandler, AZ85248",
+                "listing-type zsg-content_collapsed": "For Sale by Owner",
+                "price-large zsg-h2 zsg-content_collapsed": "$389,000",
+                "property-data": "5 bds • 3 ba • 2,585 sqft • 8,751 sqft lot • Built 1999",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33328409",
+            "id": "zpid_8194298",
+            "class": "property-listing zsg-media",
+            "longitude": "-111861826",
+            "photo": "http://photos2.zillowstatic.com/p_g/IStcd7yvkx620f1000000000.jpg",
+            "detailPage": "/homedetails/1118-W-Manor-St-Chandler-AZ-85224/8194298_zpid/",
+            "propInfo": {
+                "undefined": "1118 W Manor St, Chandler, AZ85224",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$199,900",
+                "property-data": "3 bds • 2.5 ba • 1,673 sqft • 4,499 sqft lot • Built 1986",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33226020",
+            "id": "zpid_2103079948",
+            "class": "property-listing zsg-media",
+            "longitude": "-111799255",
+            "photo": "http://photos2.zillowstatic.com/p_g/IStw0r4rzvanvv0000000000.jpg",
+            "detailPage": "/homedetails/230-E-Havasu-Pl-Chandler-AZ-85249/2103079948_zpid/",
+            "propInfo": {
+                "undefined": "230 E Havasu Pl, Chandler, AZ85249",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$394,126",
+                "property-data": "4 bds • 2.5 ba • 2,925 sqft • 8,772 sqft lot • Built 2014",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33305171",
+            "id": "zpid_71490448",
+            "class": "property-listing zsg-media",
+            "longitude": "-111813061",
+            "photo": "http://photos2.zillowstatic.com/p_g/IStw8tze304vuf0000000000.jpg",
+            "detailPage": "/homedetails/150-N-Lakeview-Blvd-UNIT-18-Chandler-AZ-85225/71490448_zpid/",
+            "propInfo": {
+                "undefined": "150 N Lakeview Blvd UNIT 18, Chandler, AZ85225",
+                "listing-type zsg-content_collapsed": "Condo For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$294,999",
+                "property-data": "3 bds • 3 ba • 2,845 sqft • Built 2006",
+                "doz zsg-fineprint": "1 day on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33324663",
+            "id": "zpid_8151508",
+            "class": "property-listing zsg-media",
+            "longitude": "-111946621",
+            "photo": "http://photos2.zillowstatic.com/p_g/IS1nyowypxh25x0000000000.jpg",
+            "detailPage": "/homedetails/1220-N-Kyrene-Rd-Chandler-AZ-85226/8151508_zpid/",
+            "propInfo": {
+                "undefined": "1220 N Kyrene Rd, Chandler, AZ85226",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$9,800,000",
+                "property-data": "8 bds • 10 ba • 15,198 sqft • 10.4 ac lot • Built 1984",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33215868",
+            "id": "zpid_8215853",
+            "class": "property-listing zsg-media",
+            "longitude": "-111795189",
+            "photo": "http://photos2.zillowstatic.com/p_g/IS5eyxhkpb6j0s0000000000.jpg",
+            "detailPage": "/homedetails/2661-E-Bellerive-Dr-Chandler-AZ-85249/8215853_zpid/",
+            "propInfo": {
+                "undefined": "2661 E Bellerive Dr, Chandler, AZ85249",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "zestimate": " Foreclosure Est.: $185K",
+                "property-data": "4 bds • 2.5 ba • 1,896 sqft • 4,952 sqft lot • Built 2002",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33312033",
+            "id": "zpid_8185597",
+            "class": "property-listing zsg-media",
+            "longitude": "-111865966",
+            "photo": "http://photos1.zillowstatic.com/p_g/IS1jfjg2p5fzze1000000000.jpg",
+            "detailPage": "/homedetails/1268-W-Oakland-St-Chandler-AZ-85224/8185597_zpid/",
+            "propInfo": {
+                "undefined": "1268 W Oakland St, Chandler, AZ85224",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$149,900",
+                "property-data": "3 bds • 1.75 ba • 1,060 sqft • 6,216 sqft lot • Built 1973",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33209497",
+            "id": "zpid_60987233",
+            "class": "property-listing zsg-media",
+            "longitude": "-111793357",
+            "photo": "http://photos2.zillowstatic.com/p_g/ISdgho7iu9rd0v1000000000.jpg",
+            "detailPage": "/homedetails/2775-E-Colonial-Ct-Chandler-AZ-85249/60987233_zpid/",
+            "propInfo": {
+                "undefined": "2775 E Colonial Ct, Chandler, AZ85249",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$399,750",
+                "property-data": "4 bds • 2 ba • 2,421 sqft • 0.32 ac lot • Built 2003",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33312291",
+            "id": "zpid_8157559",
+            "class": "property-listing zsg-media",
+            "longitude": "-111949935",
+            "photo": "http://photos3.zillowstatic.com/p_g/ISt4nh27ryi40c1000000000.jpg",
+            "detailPage": "/homedetails/500-N-Roosevelt-Ave-UNIT-110-Chandler-AZ-85226/8157559_zpid/",
+            "propInfo": {
+                "undefined": "500 N Roosevelt Ave UNIT 110, Chandler, AZ85226",
+                "listing-type zsg-content_collapsed": "Townhouse For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$175,000",
+                "property-data": "3 bds • 2.5 ba • 1,400 sqft • 1,080 sqft lot • Built 1987",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33318525",
+            "id": "zpid_8186231",
+            "class": "property-listing zsg-media",
+            "longitude": "-111869069",
+            "photo": "http://photos3.zillowstatic.com/p_g/ISlex1a95hhu1n0000000000.jpg",
+            "detailPage": "/homedetails/1593-W-Shannon-Ct-Chandler-AZ-85224/8186231_zpid/",
+            "propInfo": {
+                "undefined": "1593 W Shannon Ct, Chandler, AZ85224",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$304,900",
+                "property-data": "3 bds • 2.5 ba • 2,102 sqft • 5,672 sqft lot • Built 1992",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33229275",
+            "id": "zpid_60987118",
+            "class": "property-listing zsg-media",
+            "longitude": "-111891344",
+            "photo": "http://photos1.zillowstatic.com/p_g/IS1zn0oz8uwums0000000000.jpg",
+            "detailPage": "/homedetails/8836-E-Sunridge-Dr-Sun-Lakes-AZ-85248/60987118_zpid/",
+            "propInfo": {
+                "undefined": "8836 E Sunridge Dr, Sun Lakes, AZ85248",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$560,000",
+                "property-data": "2 bds • 3 ba • 2,846 sqft • 8,459 sqft lot • Built 2003",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33283076",
+            "id": "zpid_8208107",
+            "class": "property-listing zsg-media",
+            "longitude": "-111882342",
+            "photo": "http://photos3.zillowstatic.com/p_g/ISlel0thrbcjj21000000000.jpg",
+            "detailPage": "/homedetails/2350-W-Mulberry-Dr-Chandler-AZ-85286/8208107_zpid/",
+            "propInfo": {
+                "undefined": "2350 W Mulberry Dr, Chandler, AZ85286",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$490,000",
+                "property-data": "5 bds • 3 ba • 4,009 sqft • 9,983 sqft lot • Built 2001",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33207164",
+            "id": "zpid_8222320",
+            "class": "property-listing zsg-media",
+            "longitude": "-111860351",
+            "photo": "http://photos1.zillowstatic.com/p_g/ISxj125lvynqvg0000000000.jpg",
+            "detailPage": "/homedetails/26410-S-Eastlake-Dr-Sun-Lakes-AZ-85248/8222320_zpid/",
+            "propInfo": {
+                "undefined": "26410 S Eastlake Dr, Sun Lakes, AZ85248",
+                "listing-type zsg-content_collapsed": "House For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$209,900",
+                "property-data": "2 bds • 2 ba • 1,759 sqft • 7,034 sqft lot • Built 1987",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        },
+        {
+            "statustype": "1",
+            "latitude": "33331797",
+            "id": "zpid_8182233",
+            "class": "property-listing zsg-media",
+            "longitude": "-111827004",
+            "photo": "http://photos3.zillowstatic.com/p_g/IShrwyvhsee93b0000000000.jpg",
+            "detailPage": "/homedetails/1600-N-Saba-St-UNIT-224-Chandler-AZ-85225/8182233_zpid/",
+            "propInfo": {
+                "undefined": "1600 N Saba St UNIT 224, Chandler, AZ85225",
+                "listing-type zsg-content_collapsed": "Townhouse For Sale",
+                "price-large zsg-h2 zsg-content_collapsed": "$97,000",
+                "property-data": "2 bds • 1.5 ba • 870 sqft • 644 sqft lot • Built 1984",
+                "doz zsg-fineprint": "2 days on Zillow"
+            }
+        }
+    ]
+}
