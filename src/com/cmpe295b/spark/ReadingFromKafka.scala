@@ -7,6 +7,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.streaming.kafka.KafkaUtils
 import com.cmpe295b.Execution
 import kafka.serializer.StringDecoder
+import org.json.JSONObject
 
 object ReadingFromKafka{
   def main (args: Array[String]) {
@@ -31,6 +32,19 @@ object ReadingFromKafka{
       
       println(task)
       //execution.executeCommand(task) 
+      
+      try
+      {
+        val ab:JSONObject=new JSONObject(task)
+        println(task)
+      if(ab.get("task")!=null&&ab.get("task")=="zillowSearch")
+      {
+        execution.executeCommand(task)
+      }
+      }
+      catch{
+        case e: Exception => println("exception caught: " + e);
+      }
       }
   })
   ssc.start()

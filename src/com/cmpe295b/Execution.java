@@ -59,14 +59,14 @@ public class Execution implements Serializable{
 			StringBuilder output = new StringBuilder();
 			String line1 = "";
 			while ((line1 = reader.readLine()) != null) {
-				 System.out.println(line1);
+				 System.out.println("Got"+line1);
 				output.append(line1 + "\n");
 				try {
 					JSONObject obj = new JSONObject(line1);
-					//System.out.println(line1);
+					System.out.println(obj);
 					pushToKafka(obj.get("task").toString(), obj);
 				} catch (Exception e) {
-System.out.println(e);
+						System.out.println("exception"+e);
 				}
 			}
 
@@ -78,7 +78,7 @@ System.out.println(e);
 
 	private void pushToKafka(String topic, JSONObject line1)
 			throws UnsupportedEncodingException, JSONException {
-		System.out.println(topic);
+		System.out.println("Here");
 		Properties props = new Properties();
 
 		props.put("metadata.broker.list", "52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092");

@@ -13,7 +13,7 @@ try
 {
   task=JSON.parse(process.argv[0]);
 
-  require('./parsers/'+task.parser)(fs,request,cheerio,task);
+  require('./parsers/'+task.task)(fs,request,cheerio,task);
 }catch(e)
 {
 fs.readFile(process.argv[0]+'.json', 'utf8', function (err,data) {
