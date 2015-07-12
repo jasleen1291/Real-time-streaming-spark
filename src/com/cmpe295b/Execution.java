@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
@@ -15,8 +16,12 @@ import java.util.Properties;
 
 import org.json.*;
 
-public class Execution {
+public class Execution implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * @param args
 	 * @throws IOException
@@ -42,7 +47,7 @@ public class Execution {
 		// System.out.println(output2);
 	}
 
-	private void executeCommand(String command) throws IOException {
+	public void executeCommand(String command) throws IOException {
 		//System.out.println(command);
 		ProcessBuilder pb = new ProcessBuilder("node", "server.js", command);
 
