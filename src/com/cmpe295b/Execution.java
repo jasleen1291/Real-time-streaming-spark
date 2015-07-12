@@ -96,8 +96,4 @@ System.out.println(e);
 		producer.send(keyedMessage);
 		System.out.println("Sent");
 	}
-	private void readFromKafka(String topic)
-	{
-		
 	}
-}

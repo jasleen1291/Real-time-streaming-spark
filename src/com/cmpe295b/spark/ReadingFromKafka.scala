@@ -6,6 +6,7 @@ import org.apache.spark.streaming.Seconds
 import org.apache.spark.SparkContext
 import org.apache.spark.streaming.kafka.KafkaUtils
 import com.cmpe295b.Execution
+import kafka.serializer.StringDecoder
 
 object ReadingFromKafka{
   def main (args: Array[String]) {
@@ -15,18 +16,25 @@ object ReadingFromKafka{
   sparkConf.setMaster("local[2]")
   val sc=new SparkContext(sparkConf)
   val ssc= new StreamingContext(sc,Seconds(10))
- /* val kafkaConf=Map("metadata.broker.list"->"52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092",
-      "zookeeper.connect"->"172.31.38.38:2181",
+  val kafkaConf=Map("metadata.broker.list"->"52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092",
+      "zookeeper.connect"->"54.174.139.237:2181",
       "group.id"->"kafka-streaming",
       "auto.offset.reset"->"smallest",
       "zookeeper.connection.timeout.ms"->"1000"
-  )*/
+  )
   val topics="zillowSearch,zillowDetail"
-  val topicMap = topics.split(",").map((_, 1)).toMap
+  val topicMap = topics.split(",").toSet
   val execution=new Execution
-  val lines = KafkaUtils.createStream(ssc, "172.31.38.38:2181", "kafka-streaming", topicMap).map(_._2)
+  val lines = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc,kafkaConf, topicMap).map(_._2)
   lines.foreachRDD(rdd=>{
-    rdd.foreach { task => execution.executeCommand(task) }
+    rdd.foreach { task =>
+      
+      println(task)
+      //execution.executeCommand(task) 
+      }
   })
+  ssc.start()
+  ssc.awaitTermination()
   }
+  
 }

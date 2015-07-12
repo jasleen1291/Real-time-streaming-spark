@@ -1,436 +1,413 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Partb</groupId>
-  <artifactId>Partb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <!-- This repo is needed for elasticsearch -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Partb</groupId>
+	<artifactId>Partb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- This repo is needed for elasticsearch -->
 
-  <repositories>
+	<repositories>
 
-    <repository>
+		<repository>
 
-      <id>conjars.org</id>
+			<id>conjars.org</id>
 
-      <url>http://conjars.org/repo</url>
+			<url>http://conjars.org/repo</url>
 
-    </repository>
+		</repository>
 
-    <repository>
+		<repository>
 
-      <id>sonatype-oss</id>
+			<id>sonatype-oss</id>
 
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
 
-      <snapshots>
+			<snapshots>
 
-        <enabled>true</enabled>
+				<enabled>true</enabled>
 
-      </snapshots>
+			</snapshots>
 
-    </repository>
+		</repository>
 
-  </repositories>
+	</repositories>
 
-  <properties>
+	<properties>
 
-    <maven.compiler.source>1.5</maven.compiler.source>
+		<maven.compiler.source>1.5</maven.compiler.source>
 
-    <maven.compiler.target>1.5</maven.compiler.target>
+		<maven.compiler.target>1.5</maven.compiler.target>
 
-    <encoding>UTF-8</encoding>
+		<encoding>UTF-8</encoding>
 
-    <scala.version>2.10.5</scala.version>
+		<scala.version>2.10.5</scala.version>
 
-  </properties>
+	</properties>
 
-  <dependencies>
+	<dependencies>
+
+		<dependency>
+        <groupId>org.scala-lang</groupId>
+        <artifactId>scala-library</artifactId>
+        <version>2.11.6</version>
+    </dependency>
 
     <dependency>
-
-      <groupId>org.scala-lang</groupId>
-
-      <artifactId>scala-library</artifactId>
-
-      <version>${scala.version}</version>
-
+        <groupId>com.typesafe.akka</groupId>
+        <artifactId>akka-actor_2.11</artifactId>
+        <version>2.3.11</version>
     </dependency>
 
 
 
-    <!-- Spark -->
+		<!-- Spark -->
 
 
 
-    <dependency>
 
-      <groupId>org.apache.spark</groupId>
 
-      <artifactId>spark-streaming-kafka_2.10</artifactId>
+		<!-- Needed by spark core -->
 
-      <version>1.4.0</version>
 
-    </dependency>
 
-    <dependency>
 
-      <groupId>org.apache.spark</groupId>
 
-      <artifactId>spark-core_2.10</artifactId>
 
-      <version>1.4.0</version>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20141113</version>
+		</dependency>
 
-      <scope>provided</scope>
+		<!-- Joda -->
 
-    </dependency>
 
-    <!-- Needed by spark core -->
 
-    <dependency>
+		<dependency>
 
-      <groupId>com.fasterxml.jackson.core</groupId>
+			<groupId>joda-time</groupId>
 
-      <artifactId>jackson-databind</artifactId>
+			<artifactId>joda-time</artifactId>
 
-      <version>2.5.4</version>
+			<version>2.8</version>
 
-    </dependency>
+		</dependency>
 
 
 
-    <dependency>
+		<!-- ElasticSearch -->
 
-      <groupId>org.apache.spark</groupId>
 
-      <artifactId>spark-streaming_2.10</artifactId>
 
-      <version>1.4.0</version>
 
-      <scope>provided</scope>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-kafka_2.11</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.11</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.4.4</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
 
-    </dependency>
 
 
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20141113</version>
-    </dependency>
+	<build>
 
-    <!-- Joda -->
+		<sourceDirectory>src/</sourceDirectory>
 
 
+		<plugins>
 
-    <dependency>
 
-      <groupId>joda-time</groupId>
+			<plugin>
 
-      <artifactId>joda-time</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
 
-      <version>2.8</version>
+				<artifactId>maven-compiler-plugin</artifactId>
 
-    </dependency>
+				<configuration>
 
+					<source>1.6</source>
 
+					<target>1.6</target>
 
-    <!-- ElasticSearch -->
+				</configuration>
 
+			</plugin>
 
+			<plugin>
 
-    <dependency>
+				<groupId>org.scala-tools</groupId>
 
-      <groupId>org.elasticsearch</groupId>
+				<artifactId>maven-scala-plugin</artifactId>
 
-      <artifactId>elasticsearch-spark_2.10</artifactId>
+				<version>2.15.0</version>
 
-      <version>2.1.0.Beta4</version>
+				<executions>
 
-    </dependency>
+					<execution>
 
-  </dependencies>
+						<goals>
 
+							<goal>compile</goal>
 
+							<goal>testCompile</goal>
 
-  <build>
+						</goals>
 
-    <sourceDirectory>src/</sourceDirectory>
+						<configuration>
 
+							<args>
 
-    <plugins>
+								<!-- <arg>-make:transitive</arg> -->
 
+								<arg>-dependencyfile</arg>
 
-      <plugin>
 
-        <groupId>org.apache.maven.plugins</groupId>
 
-        <artifactId>maven-compiler-plugin</artifactId>
+								<arg>${project.build.directory}/.scala_dependencies</arg>
 
-        <configuration>
+							</args>
 
-          <source>1.6</source>
+						</configuration>
 
-          <target>1.6</target>
+					</execution>
 
-        </configuration>
+				</executions>
 
-      </plugin>
+				<configuration>
 
-      <plugin>
+					<launchers>
 
-        <groupId>org.scala-tools</groupId>
+						<launcher>
 
-        <artifactId>maven-scala-plugin</artifactId>
+							<id>sample></id>
 
-        <version>2.15.0</version>
+							<mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
 
-        <executions>
+							<args>
 
-          <execution>
+								<arg>${basedir}</arg>
 
-            <goals>
+							</args>
 
-              <goal>compile</goal>
 
-              <goal>testCompile</goal>
 
-            </goals>
+						</launcher>
 
-            <configuration>
+					</launchers>
 
-              <args>
+				</configuration>
 
-                <!-- <arg>-make:transitive</arg> -->
+			</plugin>
 
-                <arg>-dependencyfile</arg>
+			<plugin>
 
+				<groupId>org.apache.maven.plugins</groupId>
 
+				<artifactId>maven-assembly-plugin</artifactId>
 
-                <arg>${project.build.directory}/.scala_dependencies</arg>
 
-              </args>
 
-            </configuration>
+				<configuration>
 
-          </execution>
+					<!-- get all project dependencies -->
 
-        </executions>
+					<descriptorRefs>
 
-        <configuration>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
 
-          <launchers>
+					</descriptorRefs>
 
-            <launcher>
+					<!-- MainClass in mainfest make a executable jar -->
 
-              <id>sample></id>
+					<archive>
 
-              <mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
+						<manifest>
 
-              <args>
+							<mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
 
-                <arg>${basedir}</arg>
+						</manifest>
 
-              </args>
+					</archive>
 
 
 
-            </launcher>
+				</configuration>
 
-          </launchers>
+				<executions>
 
-        </configuration>
+					<execution>
 
-      </plugin>
+						<id>make-assembly</id>
 
-      <plugin>
+						<!-- bind to the packaging phase -->
 
-        <groupId>org.apache.maven.plugins</groupId>
+						<phase>package</phase>
 
-        <artifactId>maven-assembly-plugin</artifactId>
+						<goals>
 
+							<goal>single</goal>
 
+						</goals>
 
-        <configuration>
+					</execution>
 
-          <!-- get all project dependencies -->
+				</executions>
 
-          <descriptorRefs>
+			</plugin>
 
-            <descriptorRef>jar-with-dependencies</descriptorRef>
+			<plugin>
 
-          </descriptorRefs>
+				<groupId>org.apache.maven.plugins</groupId>
 
-          <!-- MainClass in mainfest make a executable jar -->
+				<artifactId>maven-surefire-plugin</artifactId>
 
-          <archive>
 
-            <manifest>
 
-              <mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
+				<configuration>
 
-            </manifest>
+					<useFile>false</useFile>
 
-          </archive>
+					<disableXmlReport>true</disableXmlReport>
 
+					<!-- If you have classpath issue like NoDefClassError,... -->
 
+					<!-- useManifestOnlyJar>false</useManifestOnlyJar -->
 
-        </configuration>
+					<includes>
 
-        <executions>
+						<include>**/*Test.*</include>
 
-          <execution>
+						<include>**/*Suite.*</include>
 
-            <id>make-assembly</id>
+					</includes>
 
-            <!-- bind to the packaging phase -->
+				</configuration>
 
-            <phase>package</phase>
+			</plugin>
 
-            <goals>
+			<plugin>
 
-              <goal>single</goal>
+				<groupId>org.apache.maven.plugins</groupId>
 
-            </goals>
+				<artifactId>maven-jar-plugin</artifactId>
 
-          </execution>
+				<version>2.3.1</version>
 
-        </executions>
+				<configuration>
 
-      </plugin>
+					<archive>
 
-      <plugin>
+						<manifest>
 
-        <groupId>org.apache.maven.plugins</groupId>
+							<addClasspath>true</addClasspath>
 
-        <artifactId>maven-surefire-plugin</artifactId>
+							<classpathLayoutType>repository</classpathLayoutType>
 
+							<classpathPrefix>${settings.localRepository}</classpathPrefix>
 
+							<mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
 
-        <configuration>
+						</manifest>
 
-          <useFile>false</useFile>
+					</archive>
 
-          <disableXmlReport>true</disableXmlReport>
+				</configuration>
 
-          <!-- If you have classpath issue like NoDefClassError,... -->
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/*.SF</exclude>
+								<exclude>META-INF/*.DSA</exclude>
+								<exclude>META-INF/*.RSA</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<id>job-driver-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<shadedClassifierName>driver</shadedClassifierName>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<!-- Some care is required: http://doc.akka.io/docs/akka/snapshot/general/configuration.html -->
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>reference.conf</resource>
+								</transformer>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>foo.bar.SparkJobs</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+					<execution>
+						<id>worker-library-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<shadedClassifierName>worker</shadedClassifierName>
+							<artifactSet>
+								<includes>
+									<!-- Fill in what you'd need here. -->
+									<include>com.fasterxml.jackson.core:*</include>
+									<include>com.fasterxml.jackson.datatype:*</include>
+									<include>com.fasterxml.jackson.module:*</include>
+									<include>org.joda:joda-convert</include>
+									<include>joda-time:joda-time</include>
+								</includes>
+							</artifactSet>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 
-          <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
+		<resources />
 
-          <includes>
 
-            <include>**/*Test.*</include>
 
-            <include>**/*Suite.*</include>
 
-          </includes>
 
-        </configuration>
-
-      </plugin>
-
-      <plugin>
-
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-jar-plugin</artifactId>
-
-        <version>2.3.1</version>
-
-        <configuration>
-
-          <archive>
-
-            <manifest>
-
-              <addClasspath>true</addClasspath>
-
-              <classpathLayoutType>repository</classpathLayoutType>
-
-              <classpathPrefix>${settings.localRepository}</classpathPrefix>
-
-              <mainClass>com.cmpe295b.spark.ReadingFromKafka</mainClass>
-
-            </manifest>
-
-          </archive>
-
-        </configuration>
-
-      </plugin>
-<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.SF</exclude>
-                                <exclude>META-INF/*.DSA</exclude>
-                                <exclude>META-INF/*.RSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>job-driver-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>driver</shadedClassifierName>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                                <!--
-                                  Some care is required:
-                                  http://doc.akka.io/docs/akka/snapshot/general/configuration.html
-                                -->
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>reference.conf</resource>
-                                </transformer>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>foo.bar.SparkJobs</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>worker-library-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>worker</shadedClassifierName>
-                            <artifactSet>
-                                <includes>
-                                    <!-- Fill in what you'd need here. -->
-                                    <include>com.fasterxml.jackson.core:*</include>
-                                    <include>com.fasterxml.jackson.datatype:*</include>
-                                    <include>com.fasterxml.jackson.module:*</include>
-                                    <include>org.joda:joda-convert</include>
-                                    <include>joda-time:joda-time</include>
-                                </includes>
-                            </artifactSet>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-              </plugin>
-    </plugins>
-
-    <resources>
-
-
-
-    </resources>
-
-  </build>
+	</build>
 
 
 
