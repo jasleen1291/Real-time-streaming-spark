@@ -1,5 +1,9 @@
 {
-  "url":"http://www.movoto.com/fremont-ca/94539/demographics/",
+  
   "task":"DetailPage",
-  "parser":"DetailPage"
+  "parser":"DetailPage",
+  "zip":"94539",
+  "city":"fremont",
+  "state":"ca"
+
 }
