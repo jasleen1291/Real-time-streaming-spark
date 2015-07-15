@@ -30,7 +30,7 @@ public class Execution implements Serializable{
 		// TODO Auto-generated method stub
 		Execution obj = new Execution();
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(
-				"task.json"));
+				"taskmovoto.json"));
 
 		StringBuffer stringBuffer = new StringBuffer();
 		String line = null;
@@ -64,7 +64,7 @@ public class Execution implements Serializable{
 				try {
 					JSONObject obj = new JSONObject(line1);
 					System.out.println(obj);
-					pushToKafka(obj.get("task").toString(), obj);
+					//pushToKafka(obj.get("task").toString(), obj);
 				} catch (Exception e) {
 						System.out.println("exception"+e);
 				}
