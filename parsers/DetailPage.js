@@ -15,7 +15,7 @@ var url2="http://www.city-data.com/zips/"+task.zip+".html"
 
                     var json = {};
                     json.zip=task.zip
-                    json.city=task.zip
+                    json.city=task.city
                     var basicdata = ($('.basicData table tr td'));
 
                     basicdata.each(function(i, elem) {
@@ -87,18 +87,8 @@ entities = new Entities();
                                 
                                 json.stores=(stores)
 
-                                collection.insert(json, function (err, doc) {
-        if (err) {
-            // If it failed, return errorprocess.exit()
-            console.log(err)
-            console.log(json)
-            process.exit()
-          // console.log("There was a problem adding the information to the database.");
-        }
-        else {
-            // And forward to success page
-              process.exit()        }
-    });
+                                console.log(json)
+                                process.exit()
                             }
 
 

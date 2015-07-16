@@ -38,17 +38,17 @@ public class Execution implements Serializable{
 			stringBuffer.append(line);
 		}
 		bufferedReader.close();
-		obj.executeCommand(stringBuffer.toString());
+		System.out.println(obj.executeCommand(stringBuffer.toString()));
 		// System.out.println("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1a6xks6qf4b_8xo7s&address="+URLEncoder.encode("4300 Verdigris Cir",
 		// "utf-8")+"&citystatezip="+URLEncoder.encode("San Jose, CA",
 		// "utf-8"));
 		// System.out.println(output2);
 	}
 
-	public void executeCommand(String command) throws IOException {
+	public String executeCommand(String command) throws IOException {
 		//System.out.println(command);
 		ProcessBuilder pb = new ProcessBuilder("node", "server.js", command);
-
+//System.out.println(command);
 		Process p = pb.start();
 		try {
 			p.waitFor();
@@ -57,21 +57,21 @@ public class Execution implements Serializable{
 			StringBuilder output = new StringBuilder();
 			String line1 = "";
 			while ((line1 = reader.readLine()) != null) {
-				 System.out.println("Got"+line1);
-				output.append(line1 + "\n");
-				try {
-					JSONObject obj = new JSONObject(line1);
-					System.out.println(obj);
-					//pushToKafka(obj.get("task").toString(), obj);
-				} catch (Exception e) {
-						System.out.println("exception"+e);
-				}
+				//System.out.println(line1);
+				output.append(line1);
+				
 			}
-
+			try {
+				
+				return new JSONObject(output.toString()).toString();
+				//pushToKafka(obj.get("task").toString(), obj);
+			} catch (Exception e) {
+					System.out.println("exception"+e);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+return "";
 	}
 
 	public void pushToKafka(String topic, JSONObject line1)

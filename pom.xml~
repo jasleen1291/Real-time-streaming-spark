@@ -5,13 +5,7 @@
    <artifactId>Partb</artifactId>
    <version>0.0.1-SNAPSHOT</version>
    <!-- This repo is needed for elasticsearch -->
-  <repositories>
-  <repository>
-    <id>typesafe</id>
-    <name>typesafe-releases</name>
-    <url>https://repo.typesafe.com/typesafe/releases</url>
-  </repository>
-</repositories>
+  
    <properties>
       <maven.compiler.source>1.5</maven.compiler.source>
       <maven.compiler.target>1.5</maven.compiler.target>
@@ -108,11 +102,6 @@
       	<artifactId>casbah_2.8.1</artifactId>
       	<version>3.0.0-M2</version>
       	<type>pom</type>
-      </dependency>
-      <dependency>
-      	<groupId>org.mongodb</groupId>
-      	<artifactId>casbah-commons_2.8.1</artifactId>
-      	<version>3.0.0-M2</version>
       </dependency>
    </dependencies>
    <build>
