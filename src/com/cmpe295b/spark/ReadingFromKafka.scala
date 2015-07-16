@@ -8,8 +8,8 @@ import org.apache.spark.streaming.kafka.KafkaUtils
 import com.mongodb.casbah.commons.conversions.scala._
 import com.mongodb.casbah.Imports._
 import com.cmpe295b.Execution
-
 import kafka.serializer.StringDecoder
+import org.json.JSONObject
 object ReadingFromKafka{
   def main (args: Array[String]) {
 
@@ -28,8 +28,9 @@ object ReadingFromKafka{
       "auto.offset.reset"->"smallest",
       "zookeeper.connection.timeout.ms"->"1000"
   )
-
- 
+  val mongoClient = MongoClient("52.2.127.199", 27017)
+val db = mongoClient("partb")
+ val coll = db("zip")
  
  
  
@@ -42,7 +43,27 @@ object ReadingFromKafka{
  lines.foreachRDD(rdd=>{
    if(rdd.count()>0)
    {
-    rdd.foreach { x => println(x) }
+   var l= rdd.foreach { x => println(x)
+      
+      val ab=new JSONObject(x)
+      val map=scala.collection.mutable.Map.empty[String,Any]
+      val keys=ab.keys()
+      while(keys.hasNext())
+      {
+        val key=keys.next().toString()
+        map.put(key, ab.get(key))
+      }
+    val doc=new MongoDBObject(map)
+    coll.insert(doc)
+   try
+    {
+     
+    }catch{
+      case e:Exception=>{
+      
+    }}
+      map
+    }
    }
  })
 //  println(rdd.print(10))
