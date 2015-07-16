@@ -23,7 +23,7 @@ object ReadingFromKafka{
       "auto.offset.reset"->"smallest",
       "zookeeper.connection.timeout.ms"->"1000"
   )
-  val topics="zillowSearch,zillowDetail"
+  val topics="zipcodetasks"
   val topicMap = topics.split(",").toSet
   val execution=new Execution
   val lines = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc,kafkaConf, topicMap).map(_._2)
