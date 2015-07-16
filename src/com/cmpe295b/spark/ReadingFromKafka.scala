@@ -37,10 +37,9 @@ object ReadingFromKafka{
       {
         val ab:JSONObject=new JSONObject(task)
         println(task)
-      if(ab.get("task")!=null&&ab.get("task")=="zillowSearch")
-      {
+     
         execution.executeCommand(task)
-      }
+      
       }
       catch{
         case e: Exception => println("exception caught: " + e);
