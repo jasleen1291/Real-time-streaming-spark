@@ -20,7 +20,7 @@ object ReadingFromKafka{
   val kafkaConf=Map("metadata.broker.list"->"52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092",
       "zookeeper.connect"->"54.174.139.237:2181",
       "group.id"->"kafka-streaming",
-      "auto.offset.reset"->"smallest",
+      //"auto.offset.reset"->"smallest",
       "zookeeper.connection.timeout.ms"->"1000"
   )
   val topics="zipcodetasks"
