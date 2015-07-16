@@ -37,11 +37,6 @@
       </dependency>
       <!-- Spark -->
       <!-- Needed by spark core -->
-      <dependency>
-         <groupId>org.json</groupId>
-         <artifactId>json</artifactId>
-         <version>20141113</version>
-      </dependency>
       <!-- Joda -->
       <dependency>
          <groupId>joda-time</groupId>
@@ -70,6 +65,11 @@
          <version>2.4.4</version>
          
       </dependency>
+      <dependency>
+	<groupId>org.json</groupId>
+	<artifactId>json</artifactId>
+	<version>20140107</version>
+</dependency>
    </dependencies>
    <build>
       <sourceDirectory>src/</sourceDirectory>

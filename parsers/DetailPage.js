@@ -15,6 +15,7 @@ var url2="http://www.city-data.com/zips/"+task.zip+".html"
 
                     var json = {};
                     json.zip=task.zip
+                    json.city=task.zip
                     var basicdata = ($('.basicData table tr td'));
 
                     basicdata.each(function(i, elem) {

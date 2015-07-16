@@ -6,15 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.Properties;
 
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
-
-import java.util.Properties;
-
-import org.json.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Execution implements Serializable{
 
@@ -76,7 +74,7 @@ public class Execution implements Serializable{
 
 	}
 
-	private void pushToKafka(String topic, JSONObject line1)
+	public void pushToKafka(String topic, JSONObject line1)
 			throws UnsupportedEncodingException, JSONException {
 		System.out.println("Here");
 		Properties props = new Properties();
