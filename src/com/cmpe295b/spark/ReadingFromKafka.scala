@@ -47,6 +47,7 @@ object ReadingFromKafka{
      if(new JSONObject(x).get("zip").toString().toInt>96162)
      {
        println(x)
+       
       val mongoClient = MongoClient("52.2.127.199", 27017)
       val db = mongoClient("partb")
        val coll = db("zip")
