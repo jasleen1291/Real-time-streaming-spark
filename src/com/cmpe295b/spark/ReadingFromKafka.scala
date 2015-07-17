@@ -28,9 +28,6 @@ object ReadingFromKafka{
       "auto.offset.reset"->"smallest",
       "zookeeper.connection.timeout.ms"->"1000"
   )
-  val mongoClient = MongoClient("52.2.127.199", 27017)
-val db = mongoClient("partb")
- val coll = db("zip")
  
  
  
@@ -43,15 +40,60 @@ val db = mongoClient("partb")
  lines.foreachRDD(rdd=>{
    if(rdd.count()>0)
    {
+     
+ 
    var l= rdd.foreach { x => println(x)
       
-      val ab=new JSONObject(x)
+     if(new JSONObject(x).get("zip").toString().toInt>96162)
+     {
+       println(x)
+      val mongoClient = MongoClient("52.2.127.199", 27017)
+      val db = mongoClient("partb")
+       val coll = db("zip")
+      val ab=new JSONObject(execution.executeCommand(x))
       val map=scala.collection.mutable.Map.empty[String,Any]
-      val keys=ab.keys()
-      while(keys.hasNext())
+      val levelOneKeys=ab.keys()
+      while(levelOneKeys.hasNext())
       {
-        val key=keys.next().toString()
-        map.put(key, ab.get(key))
+        val level1key=levelOneKeys.next().toString().replaceAll("\\.", "_")
+         try
+        {
+            val obj=new JSONObject(ab.get(level1key).toString());
+            val innerMap=scala.collection.mutable.Map.empty[String,Any]
+            val levelTwoKeys=obj.keys()
+            while(levelTwoKeys.hasNext())
+            {
+              val level2key=levelTwoKeys.next().toString().replaceAll("\\.", "_")
+             try
+              {
+               val innerInner=new JSONObject( obj.get(level2key).toString())
+               
+               val innerInnerMap=scala.collection.mutable.Map.empty[String,Any]
+               val levelThreeKeys=innerInner.keys()
+               //println(levelThreeKeys)
+               while(levelThreeKeys.hasNext())
+               {
+                 val level3=levelThreeKeys.next().toString().replaceAll("\\.", "_")
+                 //println(level3)
+                 innerInnerMap.put(level3, innerInner.get(level3).toString())
+               }
+              // //println(innerInnerMap)
+               innerMap.put(level2key, new MongoDBObject(innerInnerMap))
+              }
+              catch{
+                case e:Exception=>
+                innerMap.put(level2key.replaceAll("\\.", "_"), obj.get(level2key).toString())
+              }
+            }
+            map.put(level1key.replaceAll("\\.", "_"), new MongoDBObject(innerMap))
+        }catch
+        {
+          case e:Exception=>{
+             map.put(level1key,ab.get(level1key).toString())
+          }
+        }
+           
+          
       }
     val doc=new MongoDBObject(map)
     coll.insert(doc)
@@ -63,10 +105,10 @@ val db = mongoClient("partb")
       
     }}
       map
-    }
+    }}
    }
  })
-//  println(rdd.print(10))
+//  //println(rdd.print(10))
  
   ssc.start()
   ssc.awaitTermination()

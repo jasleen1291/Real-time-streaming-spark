@@ -7,7 +7,7 @@ var city=task.city.replace("/ /g","-")
 var state=task.state
 var url="http://www.movoto.com/"+city+"-"+state+"/"+task.zip+"/demographics/"
 var url2="http://www.city-data.com/zips/"+task.zip+".html"
-        //console.log(task.url);
+      // console.log(url2);
         request(url, function(error, response, html) {
                 if (!error) {
                     var $ = cheerio.load(html);
@@ -67,12 +67,12 @@ var url2="http://www.city-data.com/zips/"+task.zip+".html"
 
                     //json.info=basicdata;
                     var tables = ($('.tableInfoValue').text().split(","));
-                    //console.log(tables);
+                   //console.log(tables);
                     // json.val=tables;
                     var Entities = require('html-entities').XmlEntities;
  
 entities = new Entities();
-                   
+                  // console.log(json)
                     request(url2, function(error, response, html) {
                             if (!error) {
                                 var $ = cheerio.load(html);
@@ -89,7 +89,10 @@ entities = new Entities();
 
                                 console.log(json)
                                 process.exit()
-                            }
+                            }else
+                            	{
+                            	  process.exit()
+                            	}
 
 
                         
