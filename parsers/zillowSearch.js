@@ -22,7 +22,7 @@ $('.property-info').each(function(i, elem) {
     property.data=task.data
    if(property.type!=="FORECLOSED"||property.type!=="COMING SOON"||property.link.indexOf("Undisclosed")==-1||property.link.indexOf("AuthRequired")<0||property.type!=="PRE-FORECLOSURE (AUCTION)"||property.type.indexOf("MAKE ME M")<0)
    {
-	  console.log( JSON.stringify(property));
+	 tasks.push(property);
  // console.log(property)
   }else
   {
@@ -34,7 +34,7 @@ $('.property-info').each(function(i, elem) {
     property.type=$(this).find('.listing-type').text();
     property.data=task.data
    // console.log(countI+"   "+JSON.stringify(property));
-  console.log( JSON.stringify(property));
+  tasks.push(property);
 
 
 
@@ -50,10 +50,10 @@ var paginate={};
 paginate.task="zillowSearch";
 paginate.url="http://www.zillow.com"+next;
 paginate.data=task.data
-console.log(JSON.stringify(paginate));
+tasks.push(paginate);
 
 }
-
+console.log(JSON.stringify(tasks));
 }
    
 })}
