@@ -28,6 +28,7 @@ $('.property-info').each(function(i, elem) {
     //console.log($(this).find('.property-address ').html());
     property.task="zillowDetail";
     property.type=$(this).find('.listing-type').text();
+    property.data=task.data
    // console.log(countI+"   "+JSON.stringify(property));
      console.log(JSON.stringify(property));
 

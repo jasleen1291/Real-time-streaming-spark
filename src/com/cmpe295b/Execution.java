@@ -76,7 +76,7 @@ return "";
 
 	public void pushToKafka(String topic, JSONObject line1)
 			throws UnsupportedEncodingException, JSONException {
-		System.out.println("Here");
+		//System.out.println("Here");
 		Properties props = new Properties();
 
 		props.put("metadata.broker.list", "52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092");
@@ -92,6 +92,6 @@ return "";
 		
 		KeyedMessage<String, String> keyedMessage = new KeyedMessage<String, String>(topic, line1.toString());
 		producer.send(keyedMessage);
-		System.out.println("Sent");
+		//System.out.println("Sent");
 	}
 	}
