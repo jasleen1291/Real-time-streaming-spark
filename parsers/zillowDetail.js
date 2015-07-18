@@ -2,8 +2,8 @@ module.exports = function(fs, request, cheerio, task, factual, obj) {
 
 
 
-    //console.log(task.url);
-    request(task.url, function(error, response, html) {
+//console.log(task.url);
+request(task.url, function(error, response, html) {
         if (!error) {
             var $ = cheerio.load(html);
 
@@ -50,7 +50,7 @@ module.exports = function(fs, request, cheerio, task, factual, obj) {
                     js.price = Number($(this).text().replace($(this).children("span").text(), "").replace("$", "").replace(",", ""))
                 }
             })
-           
+
             $(".fact-group-container li").each(function(i, elem) {
 
 
@@ -64,235 +64,89 @@ module.exports = function(fs, request, cheerio, task, factual, obj) {
                 } else {
                     if (fact.split("\\").length > 1) {
 
-                    	if(fact.split("\\")[1].trim().split(",").length>1)
-                    	js[fact.split("\\")[0].trim()] =fact.split("\\")[1].trim().split(",")
+                        if (fact.split("\\")[1].trim().split(",").length > 1)
+                            js[fact.split("\\")[0].trim()] = fact.split("\\")[1].trim().split(",")
 
-                    		else
+                        else
 
-                        js[fact.split("\\")[0].trim()] = fact.split("\\")[1].trim()
+                            js[fact.split("\\")[0].trim()] = fact.split("\\")[1].trim()
                     } else
                         js[fact] = true
                 }
             });
+            
+            js.type = ($(".status-icon-row").text().trim())
+            var units=false;
             $("tr[data-bedroom]").each(function(i, elem) {
+                units=true;
+                $(this).find("a").each(function(i, elem) {
+                    var t={}
+                    t.url=$(this).attr("href");
+                    t.parser="zillowSearch"
+                    t.task="zillowSearch"
+                    t.data=task.data
+                    console.log(t)
+                });
 
-console.log($(this).text())
-               
             });
 
-
+if(units!==true)
+console.log("hi")
             var json = []
-            js.type = ($(".status-icon-row").text().trim())
-            console.log(js)
-                /*   factual.get('/t/places-us', {
-                           geo: {
-                               "$circle": {
-                                   "$center": [js.latitude, js.longitude],
-                                   "$meters": 1000
-                               }
-                           },
-                           filters: {
-                               category_ids: {
-                                   "$includes_any": [415]
-                               }
-                           }
-                       }, function(error, res) {
+            
 
-                           console.log(res.data.length)
-                           for (i = 0; i < res.data.length; i++) {
-                               var obj = {}
-                               var data = res.data[i]
-                               var category_labels = data.category_labels
-                               var category = []
-                               for (j = 0; j < category_labels.length; j++) {
-                                   var ar = []
-                                   for (k = 0; k < data.category_labels[j].length; k++) {
-                                       ar.push(data.category_labels[j][k])
-                                   }
-                                   console.log(ar)
-                                   category.push(JSON.stringify(data.category_labels[j]))
+/*
+            factual.get('/t/places-us', {
+                geo: {
+                    "$circle": {
+                        "$center": [js.latitude, js.longitude],
+                        "$meters": 1000
+                    }
+                },
+                filters: {
+                    category_ids: {
+                        "$includes_any": [23, 24, 44, 51, 53, 230, 312]
+                    }
+                },
+                limit: 50
+            }, function(error, res) {
 
-                               }
+                console.log(res.data.length)
+                for (i = 0; i < res.data.length; i++) {
+                    var obj = {}
+                    var data = res.data[i]
+                    var category_labels = data.category_labels
+                    var category = []
+                    for (j = 0; j < category_labels.length; j++) {
 
-                               obj.name = data.name
-                               obj.distance = data['$distance']
-                               obj.category = category
-                               json.push(obj)
-                           }
-                           console.log(data)
-                               /*factual.get('/t/places-us',{geo:{"$circle":{"$center":[js.latitude, js.longitude],"$meters":1000}}, filters:{category_ids:{"$includes_any":[62]}}}, function (error, res) {
-                                 console.log(res.data.length)
-                                 for(i=0;i<res.data.length;i++)
-                                 {
-                                 	var obj={}
-                                 	var data=res.data[i]
-                                 	var category_labels=data.category_labels
-                                 	var category=[]
-                                 	for(j=0;j<category_labels.length;j++)
-                                 	{
-                                 		var ar=[]
-                                 		for(k=0;k<data.category_labels[j].length;k++)
-                                 		{
-                                 			ar.push(data.category_labels[j][k])
-                                 		}
-                                 		console.log(ar)
-                                 		category.push(JSON.stringify(data.category_labels[j]))
-                                 		
-                                 	}
-                                 	obj.name=data.name
-                                 	obj.distance=data['$distance']
-                                 	obj.category=category
-                                 	json.push(obj)
-                                 }
-                               console.log(data)
+                        var ar = []
+                        for (k = 0; k < data.category_labels[j].length; k++) {
+                            ar.push(data.category_labels[j][k])
+                        }
+                        console.log(ar)
+                        category.push(JSON.stringify(data.category_labels[j]))
 
-                               });
-
-                               factual.get('/t/places-us',{geo:{"$circle":{"$center":[js.latitude, js.longitude],"$meters":1000}}, filters:{category_ids:{"$includes_any":[123]}}}, function (error, res) {
-                                console.log(res.data.length)
-                                 for(i=0;i<res.data.length;i++)
-                                 {
-                                 	var obj={}
-                                 	var data=res.data[i]
-                                 	var category_labels=data.category_labels
-                                 	var category=[]
-                                 	for(j=0;j<category_labels.length;j++)
-                                 	{
-                                 		var ar=[]
-                                 		for(k=0;k<data.category_labels[j].length;k++)
-                                 		{
-                                 			ar.push(data.category_labels[j][k])
-                                 		}
-                                 		console.log(ar)
-                                 		category.push(JSON.stringify(data.category_labels[j]))
-                                 		
-                                 	}
-                                 	obj.name=data.name
-                                 	obj.distance=data['$distance']
-                                 	obj.category=category
-                                 	json.push(obj)
-                                 }
-
-
-                               console.log(data)
-
-
-                               });
-
-                               factual.get('/t/places-us',{geo:{"$circle":{"$center":[js.latitude, js.longitude],"$meters":1000}}, filters:{category_ids:{"$includes_any":[23,24,44,51,53,230,312]}},limit:50}, function (error, res) {
-                                 
-                               console.log(res.data.length)
-                                 for(i=0;i<res.data.length;i++)
-                                 {
-                                 	var obj={}
-                                 	var data=res.data[i]
-                                 	var category_labels=data.category_labels
-                                 	var category=[]
-                                 	for(j=0;j<category_labels.length;j++)
-                                 	{
-                                 		
-                               var ar=[]
-                                 		for(k=0;k<data.category_labels[j].length;k++)
-                                 		{
-                                 			ar.push(data.category_labels[j][k])
-                                 		}
-                                 		console.log(ar)
-                                 		category.push(JSON.stringify(data.category_labels[j]))
-                                 		
-                                 	}
-                                 	obj.name=data.name
-                                 	obj.distance=data['$distance']
-                                 	obj.category=category
-                                 	json.push(obj)
-                                 }
-                                 console.log(data)
-                               //console.log(json)
-                               });
-
-
-
-
-                               });
-
-
-
-
-
-                               /*var addres=($('.building-title').text().trim().split(","))
-                               console.log(addres);
-                               */
-                /*
-                var addressArray=($('.addr h1').text().trim().split(","));
-                //console.log(addressArray[0].trim())
-                if(addressArray.length>5){
-                json.address=addressArray[0].trim();
-                json.city=addressArray[1].trim();
-                var stateZipArray=addressArray[2].trim().split(" ");
-                json.state=stateZipArray[0].trim();
-                json.zip=stateZipArray[1].trim();
+                    }
+                    obj.name = data.name
+                    obj.distance = data['$distance']
+                    obj.category = category
+                    json.push(obj)
                 }
-                else{
-                  var addressArray=($('.building-addr.prop-addr-city.de-emph.notranslate').text().trim().split(","))
-                 // console.log(addressArray);
-                  json.address=addressArray[0].trim();
+                console.log(data)
+                    //console.log(json)
+            });
 
-                }
-                /*
-
-                */
-                /*
-                var houseSpace=($('.addr h3').text().trim());
-
-                json.houseSpecification=houseSpace.trim();
-
-                var houseisfor=($('.status-icon-row.for-sale-row.home-summary-row').text());
-                //console.log(houseisfor);
-                json.housefor=houseisfor.trim();
-
-                var amount=($('.main-row.home-summary-row').text());
-                //console.log(amount);
-                json.price=amount;
-
-                var detail=($('.notranslate').text());
-                json.description=detail;
+*/
 
 
-                // Facts Contains Fact and Feature Block Can you check is this right or need to more in this
-                var fact=($('.fact-group-container.zsg-content-component.top-facts').text().trim().split());
-                if(fact.length>0){
-                json.facts=fact;
-                }
-                else {
-                  var fact=($('.building-attrs-group.zsg-content-component').text()).trim().split(",");
-                  json.facts=fact;
-                }
-
-                var moredetail=($('.fact-group-container.zsg-content-component.z-moreless-content').text().trim().split(","));
-                if(moredetail.length>0){
-                json.moredetails=moredetail;
-                }
-
-
-                var availableunit=($('.units-list-grouped.zsg-table.building-units-table').text().trim().split(","));
-                if(availableunit.length>0){
-                json.availableunits=availableunit;
-                }
-                // Price History not been Added stuck how to add price history
-                //document.querySelectorAll(".zsg-table.yui3-toggle-content-minimized tr.null")
-
-                //console.log(priceHistory);
-                //School Ratings
-                var rating=($(".nearby-schools-list")).text().trim().split("/n");
-                json.schoolGrading=rating;
-
-
-                 //json.housespace=addressArray[3].trim();
-
-                console.log(json);
-                */
-        }
+      
 
 
 
-    })
+
+}
+
+
+
+})
 }

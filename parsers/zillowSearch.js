@@ -7,7 +7,8 @@ request(task.url, function(error, response, html){
 
     var title, release, rating;
     var json = { houses:[]};
-
+    var tasks=[]
+//console.log(task)
 $('.property-info').each(function(i, elem) {
   //console.log ($(this).ht;
     
@@ -19,7 +20,8 @@ $('.property-info').each(function(i, elem) {
     property.task="zillowDetail";
     property.type=$(this).find('.listing-type').text();
    if(property.type!=="FORECLOSED"||property.type!=="COMING SOON"||property.link.indexOf("Undisclosed")>0||property.link.indexOf("AuthRequired")>0||property.type!=="PRE-FORECLOSURE (AUCTION)"||property.type.indexOf("MAKE ME M")>0)
-     console.log(JSON.stringify(property));
+     tasks.push(property);
+  
   }else
   {
    countI++
@@ -30,7 +32,7 @@ $('.property-info').each(function(i, elem) {
     property.type=$(this).find('.listing-type').text();
     property.data=task.data
    // console.log(countI+"   "+JSON.stringify(property));
-     console.log(JSON.stringify(property));
+  tasks.push(property);
 
 
 
@@ -45,7 +47,9 @@ if(next)
 var paginate={};
 paginate.task="zillowSearch";
 paginate.url="http://www.zillow.com"+next;
-console.log(JSON.stringify(paginate));
+paginate.data=task.data
+tasks.push(paginate);
+console.log(JSON.stringify(tasks));
 }
 
 
