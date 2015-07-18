@@ -7,19 +7,23 @@ import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Execution implements Serializable{
+public class Execution implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * @param args
 	 * @throws IOException
@@ -28,7 +32,7 @@ public class Execution implements Serializable{
 		// TODO Auto-generated method stub
 		Execution obj = new Execution();
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(
-				"taskmovoto.json"));
+				"task2.json"));
 
 		StringBuffer stringBuffer = new StringBuffer();
 		String line = null;
@@ -45,53 +49,62 @@ public class Execution implements Serializable{
 		// System.out.println(output2);
 	}
 
-	public String executeCommand(String command) throws IOException {
-		//System.out.println(command);
+	public Object executeCommand(String command) {
+		// System.out.println(command);
 		ProcessBuilder pb = new ProcessBuilder("node", "server.js", command);
-//System.out.println(command);
-		Process p = pb.start();
+		System.out.println("Command:" + command);
+		Process p;
 		try {
+			p = pb.start();
+
 			p.waitFor();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					p.getInputStream()));
-			StringBuilder output = new StringBuilder();
+
 			String line1 = "";
 			while ((line1 = reader.readLine()) != null) {
-				//System.out.println(line1);
-				output.append(line1);
-				
+				// System.out.println(line1);
+				try {
+					JSONObject o = new JSONObject(line1);
+					System.out
+							.println("sending" + o.getString("task") + "" + o);
+					if (o.getString("task") == "zillowSearch")
+						pushToKafka("search", o);
+					else
+						pushToKafka("data", o);
+				} catch (Exception e) {
+					System.out.println("Cannot send" + line1);
+				}
 			}
-			try {
-				
-				return new JSONObject(output.toString()).toString();
-				//pushToKafka(obj.get("task").toString(), obj);
-			} catch (Exception e) {
-					System.out.println("exception"+e);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
-return "";
+
+		catch (Exception ee) {
+			System.out.println("Exceptio " + command);
+			System.out.println(ee);
+		}
+
+		return null;
 	}
 
 	public void pushToKafka(String topic, JSONObject line1)
 			throws UnsupportedEncodingException, JSONException {
-		//System.out.println("Here");
+		// System.out.println("Here");
 		Properties props = new Properties();
 
-		props.put("metadata.broker.list", "52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092");
+		props.put("metadata.broker.list",
+				"52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092");
 		props.put("serializer.class", "kafka.serializer.StringEncoder");
 		props.put("auto.create.topics.enable", "true");
-		props.put("zookeeper.connect","172.31.38.38:2181");
+		props.put("zookeeper.connect", "172.31.38.38:2181");
 		ProducerConfig config = new ProducerConfig(props);
 
 		Producer<String, String> producer = new Producer<String, String>(config);
 
-		//sending...
-		
-		
-		KeyedMessage<String, String> keyedMessage = new KeyedMessage<String, String>(topic, line1.toString());
+		// sending...
+
+		KeyedMessage<String, String> keyedMessage = new KeyedMessage<String, String>(
+				topic, line1.toString());
 		producer.send(keyedMessage);
-		//System.out.println("Sent");
+		System.out.println("Sent");
 	}
-	}
+}

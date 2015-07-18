@@ -10,6 +10,7 @@ import com.mongodb.casbah.Imports._
 import com.cmpe295b.Execution
 import kafka.serializer.StringDecoder
 import org.json.JSONObject
+import org.json.JSONArray
 object ReadingFromKafka{
   def main (args: Array[String]) {
 
@@ -33,11 +34,17 @@ object ReadingFromKafka{
  
  
  
-  val topics="zipcodetasksCA"
+  val topics="zillowSearchTaskWithData2"
   val topicMap = topics.split(",").toSet
   val execution=new Execution
   val lines = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc,kafkaConf, topicMap).map(_._2)
- lines.foreachRDD(rdd=>{
+    lines.foreachRDD { x => x.foreach { x => 
+    // println(x);
+      execution.executeCommand(x) } }
+  
+  
+  
+  /* lines.foreachRDD(rdd=>{
    if(rdd.count()>0)
    {
      
@@ -108,7 +115,7 @@ object ReadingFromKafka{
       map
     }}
    }
- })
+ })*/
 //  //println(rdd.print(10))
  
   ssc.start()

@@ -32,11 +32,8 @@ public class createNewZillowTasks {
 			obj.put("parser","zillowSearch");
 			obj.put("data",new JSONObject(object.toMap()));
 			try {
-				ex.pushToKafka("zillowSearchTaskWithData", obj);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JSONException e) {
+				ex.executeCommand(obj.toString());
+			}  catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

@@ -16,31 +16,33 @@ $('.property-info').each(function(i, elem) {
    { countI++
 
     var property={}
-    property.link="http://www.zillow.com"+$(this).find('.property-address a').attr("href");
+    property.url="http://www.zillow.com"+$(this).find('.property-address a').attr("href");
     property.task="zillowDetail";
     property.type=$(this).find('.listing-type').text();
-   if(property.type!=="FORECLOSED"||property.type!=="COMING SOON"||property.link.indexOf("Undisclosed")>0||property.link.indexOf("AuthRequired")>0||property.type!=="PRE-FORECLOSURE (AUCTION)"||property.type.indexOf("MAKE ME M")>0)
-     tasks.push(property);
-  
+    property.data=task.data
+   if(property.type!=="FORECLOSED"||property.type!=="COMING SOON"||property.link.indexOf("Undisclosed")==-1||property.link.indexOf("AuthRequired")<0||property.type!=="PRE-FORECLOSURE (AUCTION)"||property.type.indexOf("MAKE ME M")<0)
+   {
+	  console.log( JSON.stringify(property));
+ // console.log(property)
   }else
   {
    countI++
  var property={}
-    property.link="http://www.zillow.com"+$(this).find('a').attr("href");
+    property.url="http://www.zillow.com"+$(this).find('a').attr("href");
     //console.log($(this).find('.property-address ').html());
     property.task="zillowDetail";
     property.type=$(this).find('.listing-type').text();
     property.data=task.data
    // console.log(countI+"   "+JSON.stringify(property));
-  tasks.push(property);
+  console.log( JSON.stringify(property));
 
 
 
-  }
+  }}
     //
   
 });
-
+ // console.log(JSON.stringify(tasks));
 var next=$(".zsg-pagination_active").next().children("a").attr("href");
 if(next)
 {
@@ -48,9 +50,10 @@ var paginate={};
 paginate.task="zillowSearch";
 paginate.url="http://www.zillow.com"+next;
 paginate.data=task.data
-tasks.push(paginate);
-console.log(JSON.stringify(tasks));
+console.log(JSON.stringify(paginate));
+
 }
 
-
-}})}
+}
+   
+})}
