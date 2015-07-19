@@ -2,7 +2,7 @@ module.exports = function(fs, request, cheerio, task, factual, obj) {
 
 
 
-   // console.log(task.url);
+    console.log(task.url);
     request(task.url, function(error, response, html) {
         if (!error) {
             var $ = cheerio.load(html);
@@ -114,9 +114,10 @@ module.exports = function(fs, request, cheerio, task, factual, obj) {
                     //insert record
                     db.collection('house').insert(js, function(err, records) {
 
-
+ if (err) throw console.log(err);
+else
+console.log(records);
                         db.close();
-process.exit(code=0)
                     });
                 });
 

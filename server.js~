@@ -32,7 +32,7 @@ fs.readFile(process.argv[0]+'.json', 'utf8', function (err,data) {
 fs.readFile('mapped.json', function(err, data){
 	
 	obj = JSON.parse(data)
-	require('./parsers/'+task.task)(fs,request,cheerio,task,factual,obj);
+	require('./parsers/'+task.parser)(fs,request,cheerio,task,factual,obj);
 })
 });
 }

@@ -34,13 +34,14 @@ object ReadingFromKafka{
  
  
  
-  val topics="zillowSearchTaskWithData2"
+  val topics="zillowDetail2"
   val topicMap = topics.split(",").toSet
   val execution=new Execution
   val lines = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc,kafkaConf, topicMap).map(_._2)
     lines.foreachRDD { x => x.foreach { x => 
-    // println(x);
-      execution.executeCommand(x) } }
+    println(x);
+    //  execution.executeCommand(x) 
+    } }
   
   
   
