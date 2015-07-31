@@ -1,8 +1,10 @@
 package com.cmpe295b.spark
 import org.apache.spark.mllib.recommendation.ALS
 import org.apache.spark.SparkContext
+import org.apache.spark.mllib.recommendation.MatrixFactorizationModel
 import org.apache.spark.SparkConf
-
+import org.apache.spark.mllib.recommendation.Rating
+import org.apache.spark.mllib.recommendation.MatrixFactorizationModel
 /**
  * @author hduser
  */
@@ -18,9 +20,34 @@ object PageRank {
       .map { line => 
       val fields=line.split(",")
      // println("fields(2)"+fields(2))
-      (fields(0),fields(1),fields(2).toDouble)
+     Rating (fields(0).substring(1).toInt,fields(1).substring(1).toInt,fields(2).toDouble)
     }
-    
+    val rank = 10
+val numIterations = 20
+val model = ALS.train(ratings, rank, numIterations, 0.01)
+
+// Evaluate the model on rating data
+val usersProducts = ratings.map { case Rating(user, product, rate) =>
+  (user, product)
+}
+val predictions = 
+  model.predict(usersProducts).map { case Rating(user, product, rate) => 
+    ((user, product), rate)
+  }
+val ratesAndPreds = ratings.map { case Rating(user, product, rate) => 
+  ((user, product), rate)
+}.join(predictions)
+val MSE = ratesAndPreds.map { case ((user, product), (r1, r2)) => 
+  val err = (r1 - r2)
+  err * err
+}.mean()
+println("Mean Squared Error = " + MSE)
+
+// Save and load model
+model.save(sc, "myModelPath")
+val sameModel = MatrixFactorizationModel.load(sc, "myModelPath")
+val pred=sameModel.predict(100, 100)
+println(pred)
   /*  val numOfMoviesRatedByEachUser=ratings.groupBy(tup=>tup._1).map(tup=>(tup._1,tup._2.size))
     //numOfMoviesRatedByEachUser.saveAsTextFile("sdjk")
     val numRatersPerMovie=ratings
