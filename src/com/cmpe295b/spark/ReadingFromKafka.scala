@@ -1,16 +1,13 @@
 package com.cmpe295b.spark
 
 import org.apache.spark.SparkConf
+import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SQLContext._
+import org.elasticsearch.spark.sql._
 import org.apache.spark.SparkContext
-import org.apache.spark.streaming.Seconds
-import org.apache.spark.streaming.StreamingContext
-import org.apache.spark.streaming.kafka.KafkaUtils
-import com.mongodb.casbah.commons.conversions.scala._
-import com.mongodb.casbah.Imports._
-import com.cmpe295b.Execution
-import kafka.serializer.StringDecoder
-import org.json.JSONObject
-import org.json.JSONArray
+
+
+import org.joda.time.Seconds
 object ReadingFromKafka{
   def main (args: Array[String]) {
 
@@ -18,21 +15,21 @@ object ReadingFromKafka{
   sparkConf.setAppName("Kafka Streaming")
   sparkConf.setMaster("local[2]")
   
- // sparkConf.set("es.index.auto.create", "true")
+  sparkConf.set("es.index.auto.create", "true")
  // sparkConf.set("es.nodes", "52.2.120.221")
   sparkConf.set("es.resource", "zip")
   val sc=new SparkContext(sparkConf)
-  val ssc= new StreamingContext(sc,Seconds(10))
-  val kafkaConf=Map("metadata.broker.list"->"52.4.219.61:9092,54.164.200.26:9092,54.152.210.81:9092",
-      "zookeeper.connect"->"54.174.139.237:2181",
-      "group.id"->"kafka-streaming",
-      "auto.offset.reset"->"smallest",
-      "zookeeper.connection.timeout.ms"->"1000"
-  )
+ // val ssc= new StreamingContext(sc,Seconds(10))
+ 
+ val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+val df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").load("test.csv")
+df.printSchema()
+//df.collect()
+df.saveToEs("partb/houses")
+
  
  
- 
- 
+ /*
  
   val topics="zillowDetail2"
   val topicMap = topics.split(",").toSet
@@ -42,7 +39,7 @@ object ReadingFromKafka{
     println(x);
     //  execution.executeCommand(x) 
     } }
-  
+  */
   
   
   /* lines.foreachRDD(rdd=>{
@@ -119,8 +116,8 @@ object ReadingFromKafka{
  })*/
 //  //println(rdd.print(10))
  
-  ssc.start()
-  ssc.awaitTermination()
+ // ssc.start()
+ // ssc.awaitTermination()
   }
   
 }
